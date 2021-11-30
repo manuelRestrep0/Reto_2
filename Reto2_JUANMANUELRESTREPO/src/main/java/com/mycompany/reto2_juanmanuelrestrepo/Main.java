@@ -23,7 +23,8 @@ public class Main {
         int ejecucion = 1;
         while(ejecucion==1){ // Bucle donde se ejecuta el programa principal
             System.out.println("Seleccione un ejercicio");
-            System.out.println("opciones: 1) 2) 3) 4) ");
+            System.out.println("opciones ejercicios: 1) 2) 3) 4) ");
+            System.out.println("5) Para cerrar el programa");
             Scanner lector_input = new Scanner(System.in);
             if(lector_input.hasNextInt()==true){ //condición para verificar la entrada
                 int opcion = lector_input.nextInt();
@@ -45,12 +46,17 @@ public class Main {
                         ejercicio_4(dinero);
                     }
                 }
+                if(opcion==5)
+                {
+                    System.out.print("Hasta luego");
+                    ejecucion=0;
+                }
             }
             else{
                 System.out.println("Por favor introduzca una opción valida");
             }   
 
-            System.out.println("¿Desea continuar la ejecucion?");
+            /*System.out.println("¿Desea continuar la ejecucion?");
             System.out.println("Si(1) No(0)");
             lector_input = new Scanner(System.in);
             if(lector_input.hasNextInt()==true){
@@ -62,7 +68,7 @@ public class Main {
             }
             else{
                 System.out.println("Por favor digite una opción valida");
-            }
+            }*/
         }     
     }
     static void ejercicio_1()
@@ -163,17 +169,8 @@ public class Main {
                 if(suma_impares)
                 { 
                     /*
-                    en el primer bucle for se hace una suma desde 0 hasta n 
-                    para saber cual
-                    es el numero impar con el que se va a empezar la suma 
-                    para el numero n y se almacena en la variable
-                    numeros_a_sumar. 
                     */
-                    int numeros_a_sumar=0;
-                    for(int j = 1; j<numero_n;j++)
-                    {
-                        numeros_a_sumar+=j;
-                    }
+                    int numeros_a_sumar=((numero_n*(numero_n+1))/2)-numero_n;
                     suma_impares=false; //indica que se ha hecho la suma
                     for(int j=1;j<=numeros_a_sumar;j++)
                     {
