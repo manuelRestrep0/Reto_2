@@ -43,7 +43,12 @@ public class Main {
                     lector_input = new Scanner(System.in);
                     if(lector_input.hasNextInt()==true){
                         int dinero = lector_input.nextInt();
-                        ejercicio_4(dinero);
+                        if(dinero>=50)
+                            ejercicio_4(dinero);
+                        else{
+                            System.out.println("Cantidad invalida");
+                        }
+                        
                     }
                 }
                 if(opcion==5)
