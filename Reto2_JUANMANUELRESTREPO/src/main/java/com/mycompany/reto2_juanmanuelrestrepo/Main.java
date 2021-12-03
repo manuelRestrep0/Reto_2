@@ -1,6 +1,12 @@
 package com.mycompany.reto2_juanmanuelrestrepo;
 import java.util.Scanner;
 import java.util.concurrent.RejectedExecutionException;
+
+/*
+    JUAN MANUEL RESTREPO GALARCIO
+    1001154483
+
+*/
 public class Main {
     public static void main(String[] args)
     {
@@ -84,7 +90,7 @@ public class Main {
         Por medio de dos bucles for anidados se realizan las multiplicaciones
         y se muestran en pantalla.
         */
-        System.out.println("Ingrese el numero n");
+        System.out.println("Ingrese el numero n (entero positivo)");
         Scanner input_numeros = new Scanner(System.in);
         if(input_numeros.hasNextInt()==true)
         {
@@ -210,6 +216,13 @@ public class Main {
     }
     static void ejercicio_4(int cantidad_dinero)
     {
+        /*
+        el funcionamiento de este algoritmo es muy simple, entra a un ciclo
+        while que esta activo mientras la cantidad de dinero sea diferente de 0
+        y va entrando a condicionales para determinar que billetes entregar,
+        al entrar en un if se descuenta la cantidad del billete en la variable
+        cantidad dinero y se le añade un contador a la variable del billete.
+        */
         boolean ejecucion = true;
         int billete_100=0 , billete_50=0 , billete_20=0, billete_10=0 , billete_5=0 , billete_2=0 , billete_1=0;
         int moneda_500=0 , moneda_200=0 , moneda_100=0 , moneda_50=0;
@@ -306,7 +319,12 @@ public class Main {
                 moneda_50+=1;
                 cantidad_dinero-=50;
                 continue;
-            }   
+            }
+               else
+               {
+                   System.out.println("Cantidad invalida");
+                   break;
+               }
         }
     }
     static boolean verificar_variable(int variable)
